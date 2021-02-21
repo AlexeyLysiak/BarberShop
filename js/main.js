@@ -1,5 +1,6 @@
 $(document).ready(function (e) {
 	btnBurger();
+  swiper();
 });
 
 function btnBurger(e) {
@@ -26,4 +27,26 @@ function btnBurger(e) {
 			}
 		}
 	});
+}
+
+
+function swiper() {
+  // const swiper = new Swiper('.swiper-container', {
+  //   direction: 'vertical',
+  //   loop: true,
+  //   // Navigation arrows
+  //   navigation: {
+  //     nextEl: '.swiper-button-next',
+  //     prevEl: '.swiper-button-prev',
+  //   },
+  // });
+
+  var swiper = new Swiper('.swiper-container', {
+    navigation: {
+      nextEl: '.swiper-next',
+      prevEl: '.swiper-prev',
+    },
+    loop: true,
+    spaceBetween: 30,
+  });
 }
