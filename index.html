@@ -75,9 +75,9 @@
     </header>
 
     <main class="main">
-<figure class="section-background">
-  <img src="images/main_bg.png" alt="background">
-</figure>
+  <figure class="section-background">
+    <img src="images/main_bg.png" alt="background">
+  </figure>
 
   <div class="section-foreground">
     <div class="container">
@@ -212,9 +212,57 @@
                 </div>
               </div>
             </div>
-            <div class="column"></div>
+            <div class="column">
+              <div class="booking">
+                <h2 class="section-title">
+                  Записаться
+                </h2>
+                <form action="#">
+                  <div class="booking-form">
+                    <div class="booking-desc">
+                      УКАЖИТЕ ЖЕЛАЕМУЮ ДАТУ И ВРЕМЯ И МЫ
+                      СВЯЖЕМСЯ С ВАМИ ДЛЯ ПОДТВЕРЖДЕНИЯ БРОНИ
+                    </div>
+                    <div class="booking-content">
+                      <div class="field-holder">
+                        <label>
+                          <span class="text">Дата</span>
+                          <input type="text" placeholder="18.01.2020" required>
+                        </label>
+                      </div>
+                      <div class="field-holder">
+                        <label>
+                          <span class="text">
+                            Время
+                          </span>
+                          <input type="text" placeholder="18.10" required>
+                        </label>
+                      </div>
+                      <div class="field-holder">
+                        <label>
+                          <span class="text">
+                            Ваше имя
+                          </span>
+                          <input type="text" placeholder="Василий" required>
+                        </label>
+                      </div>
+                      <div class="field-holder">
+                        <label>
+                          <span class="text">
+                            Телефон
+                          </span>
+                          <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="0501234567" required>
+                        </label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn">Отправить</button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
+        
       </div>
     </div>
   </div>
