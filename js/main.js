@@ -1,47 +1,40 @@
-$(document).ready(function (e) {
-	btnBurger();
+window.onload = init();
+
+function init () {
+  btnBurger();
   swiper();
-});
-
-function btnBurger(e) {
-	$('.hamburger').on('click', function() {
-		const $this = $(this);
-		const $parent = $this.parents('.header');
-
-		if ($this.hasClass('is-active')) {
-			$this.removeClass('is-active');
-			$parent.removeClass('open-menu');
-      $('.wrapper').removeClass('lock');
-		} else {
-			$this.addClass('is-active');
-      $parent.addClass('open-menu');
-      $('.wrapper').addClass('lock');
-		}
-	})
-	$('.wrapper').on('click', function(e) {
-		if (!$(e.target).closest('.hamburger, .nav-list').length) {
-			if ($('.header').hasClass('open-menu')) {
-				$('.hamburger').removeClass('is-active');
-				$('.header').removeClass('open-menu');
-        $('.wrapper').removeClass('lock');
-			}
-		}
-	});
 }
 
+function btnBurger() {
+  const hamburger = document.querySelector(".hamburger");
+  const parent = document.querySelector('.header');
+  const wrapper = document.querySelector('.wrapper');
+  hamburger.addEventListener('click', function() {
+    if (hamburger.classList.contains('is-active')) {
+      hamburger.classList.remove('is-active');
+      parent.classList.remove('open-menu');
+      wrapper.classList.remove('lock');
+    } else {
+      hamburger.classList.add('is-active');
+      parent.classList.add('open-menu');
+      wrapper.classList.add('lock')
+    }
+  })
+
+  wrapper.addEventListener('click', function(e) {
+    if (e.target == hamburger || e.target == document.querySelector('.nav-list')) {
+      if (parent.classList.contains('open-menu')) {
+        parent.classList.remove('open-menu');
+        hamburger.classList.remove('is-active');
+        wrapper.classList.remove('lock');
+        console.log(hamburger);
+      }
+    }
+  })
+}
 
 function swiper() {
-  // const swiper = new Swiper('.swiper-container', {
-  //   direction: 'vertical',
-  //   loop: true,
-  //   // Navigation arrows
-  //   navigation: {
-  //     nextEl: '.swiper-button-next',
-  //     prevEl: '.swiper-button-prev',
-  //   },
-  // });
-
-  var swiper = new Swiper('.swiper-container', {
+  const swiper = new Swiper('.swiper-container', {
     navigation: {
       nextEl: '.swiper-next',
       prevEl: '.swiper-prev',
